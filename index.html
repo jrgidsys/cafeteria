@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeter&iacute;a En el Cerro de las Hojas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Google Fonts para la nueva est&eacute;tica -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Definici&oacute;n de variables CSS para colores, inspiradas en la imagen de referencia */
+        :root {
+            --color-dark-bg: #1A1A1A; /* Fondo casi negro */
+            --color-light-text: #F8F5F0; /* Blanco crema para texto principal */
+            --color-gold-accent: #DAA520; /* Dorado para acentos y t&iacute;tulos */
+            --color-grey-text: #AAAAAA; /* Gris suave para texto secundario */
+            --color-divider: rgba(218, 165, 32, 0.4); /* Dorado semi-transparente para divisores */
+        }
+
+        /* Estilos generales del cuerpo */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-dark-bg);
+            color: var(--color-light-text);
+            line-height: 1.6;
+            /* Fondo sutil si se desea, similar a la imagen */
+            background-image: url('imagenes/fondo-cafe2.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+        }
+
+        /* Contenedor principal para aplicar un overlay y mejorar la legibilidad */
+        .main-wrapper {
+    background-color: rgba(0, 0, 0, 0.85); /* Subido a 0.85 */
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+        /* Estilos de la barra de navegaci&oacute;n de Bootstrap */
+        .navbar {
+            background-color: var(--color-dark-bg) !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            border-bottom: 1px solid var(--color-divider);
+        }
+
+        /* Estilos para el t&iacute;tulo de la marca */
+        .navbar-brand {
+            color: var(--color-light-text) !important;
+            font-family: 'Playfair Display', serif; /* Fuente elegante para la marca */
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        /* Estilos para los botones de navegaci&oacute;n */
+        .navbar-nav .nav-link.navbar-btn {
+            background-color: transparent; /* Fondo transparente */
+            color: var(--color-light-text) !important;
+            padding: 8px 15px;
+            border-radius: 5px; /* Ligeramente redondeado */
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            border: 1px solid transparent; /* Borde transparente por defecto */
+        }
+
+        .navbar-nav .nav-link.navbar-btn:hover,
+        .navbar-nav .nav-link.navbar-btn:focus {
+            background-color: rgba(218, 165, 32, 0.1); /* Fondo dorado suave al pasar el ratón */
+            color: var(--color-gold-accent) !important;
+            border-color: var(--color-gold-accent); /* Borde dorado */
+            transform: translateY(-2px);
+        }
+
+        /* Estilos para los iconos dentro de los botones */
+        .navbar-nav .nav-link.navbar-btn i {
+            font-size: 1em;
+            color: var(--color-light-text); /* Iconos blancos por defecto */
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link.navbar-btn:hover i {
+            color: var(--color-gold-accent); /* Iconos dorados al pasar el ratón */
+        }
+
+        /* Ajuste para pantallas pequeñas para que los botones se apilen bien */
+        @media (max-width: 991.98px) {
+            .navbar-nav .nav-link.navbar-btn {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 5px;
+            }
+        }
+
+        /* Secci&oacute;n de h&eacute;roe (banner principal) */
+        .hero-section {
+            background-color: transparent;
+            color: var(--color-light-text);
+            padding: 80px 0 40px; /* M&aacute;s padding superior */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* T&iacute;tulo principal de la secci&oacute;n de h&eacute;roe */
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5em; /* Tama&ntilde;o grande */
+            margin-bottom: 15px;
+            color: var(--color-gold-accent); /* T&iacute;tulo en dorado */
+            text-shadow: 0 0 10px rgba(218, 165, 32, 0.5); /* Sombra sutil para el t&iacute;tulo */
+        }
+
+        /* P&aacute;rrafo de la secci&oacute;n de h&eacute;roe */
+        .hero-section p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3em;
+            color: var(--color-grey-text);
+            font-style: italic;
+        }
+
+        /* Contenedor principal del contenido */
+        .container-main {
+            background-color: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 30px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Estilos para los t&iacute;tulos de secci&oacute;n (H2) */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-gold-accent);
+            text-align: center;
+            margin-bottom: 40px; /* M&aacute;s espacio abajo */
+            font-size: 3.5em;
+            padding-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            width: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            letter-spacing: 2px; /* Espaciado entre letras */
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Ancho de la l&iacute;nea */
+            height: 2px;
+            background-color: var(--color-divider);
+        }
+
+        /* Estilos para los subt&iacute;tulos de secci&oacute;n (H3) */
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-light-text);
+            margin-top: 35px; /* M&aacute;s margen superior */
+            margin-bottom: 25px; /* M&aacute;s margen inferior */
+            font-size: 2.5em;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            letter-spacing: 1.5px;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; /* Posici&oacute;n de la l&iacute;nea */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%; /* Ancho de la l&iacute;nea */
+            height: 1px;
+            background-color: var(--color-divider);
+        }
+
+        /* Estilos para cada &iacute;tem del men&uacute; */
+        .menu-item {
+            background-color: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            overflow: hidden;
+            transition: none;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 8px 0; /* M&aacute;s padding vertical */
+            border-bottom: 1px dashed var(--color-divider); /* L&iacute;nea punteada dorada */
+            margin-bottom: 10px;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Estilos para las im&aacute;genes de los &iacute;tems del men&uacute; (eliminadas) */
+        .menu-item img {
+            display: none;
+        }
+
+        /* Contenido de texto dentro del &iacute;tem del men&uacute; */
+        .menu-item-content {
+            padding: 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        /* Estilos para el t&iacute;tulo del &iacute;tem del men&uacute; (H4) */
+        .menu-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-light-text);
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: 600;
+            flex-basis: 70%;
+            text-align: left;
+        }
+
+        /* Estilos para los p&aacute;rrafos de descripci&oacute;n dentro del &iacute;tem del men&uacute; (ocultos) */
+        .menu-item p:not(.price) {
+            display: none;
+        }
+
+        /* Estilos para el precio del &iacute;tem del men&uacute; */
+        .menu-item .price {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--color-gold-accent); /* Precio en dorado */
+            font-size: 1.1em;
+            text-align: right;
+            margin: 0;
+            flex-basis: 30%;
+        }
+
+        /* Estilos para el listado de sabores (oculto) */
+        .flavor-list {
+            display: none;
+        }
+
+        /* Nota especial (por ejemplo, para la disponibilidad de pastas) */
+        .special-note {
+            background-color: rgba(218, 165, 32, 0.2); /* Fondo dorado semi-transparente */
+            border: 1px solid var(--color-gold-accent);
+            color: var(--color-light-text);
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Informaci&oacute;n de contacto */
+        .contact-info {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--color-divider);
+            color: var(--color-light-text);
+        }
+
+        /* P&aacute;rrafos dentro de la informaci&oacute;n de contacto */
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: var(--color-grey-text);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Pie de p&aacute;gina */
+        footer {
+            background-color: var(--color-dark-bg);
+            color: var(--color-grey-text);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-family: 'Montserrat', sans-serif;
+            border-top: 1px solid var(--color-divider);
+        }
+
+        /* Estilos para la secci&oacute;n de promociones */
+        .promotions-section {
+            background-color: transparent;
+            color: var(--color-light-text);
+            padding: 30px;
+            border-radius: 0;
+            margin-top: 40px;
+            box-shadow: none;
+            text-align: center;
+        }
+
+        .promotions-section h2 {
+            color: var(--color-gold-accent);
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--color-divider);
+            padding-bottom: 10px;
+        }
+
+        .promotion-item {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 15px 0;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+            box-shadow: none;
+            transition: none;
+            border-bottom: 1px dashed var(--color-divider);
+            margin-bottom: 10px;
+        }
+
+        .promotion-item:last-child {
+            border-bottom: none;
+        }
+
+        .promotion-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-light-text);
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 0;
+            flex-basis: 70%;
+            text-align: left;
+        }
+
+        .promotion-item p {
+            display: none;
+        }
+
+        .promotion-item .promo-price {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--color-gold-accent);
+            font-size: 1.1em;
+            text-align: right;
+            margin: 0;
+            flex-basis: 30%;
+        }
+
+        /* Estilos para el banner flotante de promociones (oculto para esta est&eacute;tica) */
+        #floating-promo-banner {
+            display: none; /* Ocultar el banner flotante */
+        }
+
+        /* Estilos para la secci&oacute;n de agradecimiento (ajustado para la nueva est&eacute;tica) */
+        #thank-you-section {
+            background-color: transparent;
+            color: var(--color-light-text);
+            padding: 50px 20px;
+            border-radius: 0;
+            margin-top: 60px;
+            text-align: center;
+            box-shadow: none;
+            border-top: 1px solid var(--color-divider);
+        }
+
+        #thank-you-section h2 {
+            color: var(--color-gold-accent);
+            border-bottom: 2px solid var(--color-divider);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        #thank-you-section p {
+            font-size: 1.4em;
+            font-family: 'Playfair Display', serif; /* Fuente elegante */
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: var(--color-grey-text);
+        }
+
+        #thank-you-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0;
+            box-shadow: none;
+            margin-top: 20px;
+        }
+
+        /* Estilos para la secci&oacute;n de fecha y hora */
+        #datetime-display {
+            text-align: center;
+            color: var(--color-grey-text);
+            font-size: 1.1em;
+            margin-top: -20px;
+            margin-bottom: 20px;
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Media Queries para adaptaci&oacute;n a m&oacute;viles */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 3em;
+            }
+            .hero-section p {
+                font-size: 1em;
+            }
+            h2 {
+                font-size: 2.2em;
+            }
+            h3 {
+                font-size: 1.6em;
+            }
+            .menu-item h4, .menu-item .price, .promotion-item h4, .promotion-item .promo-price {
+                font-size: 0.95em;
+            }
+            .navbar-nav .nav-link.navbar-btn {
+                padding: 6px 10px;
+                font-size: 0.85em;
+            }
+            #datetime-display {
+                font-size: 0.85em;
+                padding: 8px;
+            }
+            #thank-you-section p {
+                font-size: 1.1em;
+            }
+        }
+
+        /* Estilos para el bot&oacute;n de despliegue del men&uacute; (navbar-toggler) */
+        .navbar-toggler {
+            background-color: var(--color-gold-accent) !important;
+            border: 1px solid var(--color-light-text) !important;
+            border-radius: 5px !important;
+            padding: 8px 12px !important;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .navbar-toggler:hover,
+        .navbar-toggler:focus {
+            background-color: var(--color-light-text) !important;
+            border-color: var(--color-gold-accent) !important;
+        }
+
+        /* Estilos para el texto y el icono dentro del bot&oacute;n de despliegue */
+        .navbar-toggler-label {
+            color: var(--color-dark-bg); /* Texto oscuro sobre fondo dorado */
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .navbar-toggler-label i {
+            color: var(--color-dark-bg);
+        }
+        .hero-section h1,
+h2,
+h3,
+.menu-item h4,
+.promotion-item h4,
+footer,
+.contact-info p,
+#thank-you-section h2,
+#thank-you-section p {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+}
+    </style>
+</head>
+<body>
+    <!-- Banner flotante de promociones -->
+    <div id="floating-promo-banner">
+        🛍️ <span id="promo-text">¡Promo: 2x1 en frap&eacute;s!</span>
+        <button class="close-btn" id="close-promo-banner">&times;</button>
+    </div>
+
+    <!-- Barra de navegaci&oacute;n de Bootstrap -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CAFETER&Iacute;A EN EL CERRO DE LAS HOJAS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-label">Menú <i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#cafe"><i class="fas fa-coffee"></i> Caf&eacute;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#tizanas"><i class="fas fa-leaf"></i> Tizanas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#te"><i class="fas fa-mug-hot"></i> T&eacute;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#bubble-tea"><i class="fas fa-glass-cheers"></i> Bubble Tea</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#lattes-chocolate"><i class="fas fa-hot-chocolate"></i> Lattes &amp; Chocolate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#frapes-sodas"><i class="fas fa-ice-cream"></i> Frapes &amp; Sodas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#paquetes"><i class="fas fa-box-open"></i> Paquetes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#delicias"><i class="fas fa-utensils"></i> Delicias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#postres"><i class="fas fa-cookie-bite"></i> Postres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#promotions"><i class="fas fa-tags"></i> Promociones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#contacto"><i class="fas fa-phone"></i> Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secci&oacute;n de h&eacute;roe con el t&iacute;tulo y la frase -->
+    <div class="hero-section">
+        <h1>CAFETER&Iacute;A EN EL CERRO DE LAS HOJAS</h1>
+        <p>&ldquo;En el cerro de las hojas, cada sabor cuenta una historia&rdquo;</p>
+    </div>
+
+    <!-- Secci&oacute;n para mostrar la fecha y hora actual -->
+    <div id="datetime-display"></div>
+
+    <!-- Wrapper principal para el contenido con el overlay -->
+    <div class="main-wrapper">
+        <!-- Contenedor principal de Bootstrap -->
+        <div class="container container-main">
+            <!-- Secci&oacute;n de Caf&eacute; -->
+            <section id="cafe" class="mb-5">
+                <h2>CAF&Eacute;</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>CAF&Eacute; AMERICANO</h4>
+                            <p class="price">$25.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>EXPRESO DOBLE</h4>
+                            <p class="price">$25.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>CAPUCHINO</h4>
+                            <p class="price">$40.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>CAPUCHINO VAINILLA</h4>
+                            <p class="price">$40.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>CAPUCHINO IRLANDESA</h4>
+                            <p class="price">$40.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>MOKACHINO</h4>
+                            <p class="price">$40.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secci&oacute;n de Tizanas -->
+            <section id="tizanas" class="mb-5">
+                <h2>TIZANA</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Durazno</h4>
+                            <p class="price">$50.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Mango</h4>
+                            <p class="price">$50.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Manzana</h4>
+                            <p class="price">$50.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Ar&aacute;ndanos</h4>
+                            <p class="price">$50.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Fresa</h4>
+                            <p class="price">$50.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Kiwi</h4>
+                            <p class="price">$50.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Moras del Bosque</h4>
+                            <p class="price">$50.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Ponche de Frutas</h4>
+                            <p class="price">$50.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secci&oacute;n de T&eacute; -->
+            <section id="te" class="mb-5">
+                <h2>T&Eacute;</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>T&eacute; Negro</h4>
+                            <p class="price">$25.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>T&eacute; Verde</h4>
+                            <p class="price">$25.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>T&eacute; de Manzanilla</h4>
+                            <p class="price">$25.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>T&eacute; de Lim&oacute;n</h4>
+                            <p class="price">$25.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secci&oacute;n de Bubble Tea -->
+            <section id="bubble-tea" class="mb-5">
+                <h2>BUBBLE TEA</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Bubble Tea Macha</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Bubble Tea Taro</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Bubble Tea Cookies</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                     <div class="col">
+                        <div class="menu-item">
+                            <h4>Bubble Tea Caramelo</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                     <div class="col">
+                        <div class="menu-item">
+                            <h4>Bubble Tea Negro</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                     <div class="col">
+                        <div class="menu-item">
+                            <h4>Bubble Tea Vainilla</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                     <div class="col">
+                        <div class="menu-item">
+                            <h4>Bubble Tea de Arroz con Leche</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Capuchino / Tapioca</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secci&oacute;n de Lattes Calientes y Chocolate -->
+            <section id="lattes-chocolate" class="mb-5">
+                <h2>LATTES CALIENTES &amp; CHOCOLATE</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Latte de Macha</h4>
+                            <p class="price">$55.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Latte de Taro</h4>
+                            <p class="price">$55.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Latte de Galleta</h4>
+                            <p class="price">$55.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Latte de Caramelo</h4>
+                            <p class="price">$55.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Latte de Fresas con Crema</h4>
+                            <p class="price">$55.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Latte de Vainilla Francesa</h4>
+                            <p class="price">$55.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Latte de Arroz con Leche</h4>
+                            <p class="price">$55.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Chocolate Caliente</h4>
+                            <p class="price">$55.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secci&oacute;n de Frapes y Soda Italiana -->
+            <section id="frapes-sodas" class="mb-5">
+                <h2>FRAPES &amp; SODA ITALIANA</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Frape de Vainilla Francesa</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Frape de Cookies &amp; Crema</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Frape de Fresas con Crema</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Frape de Taro</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                     <div class="col">
+                        <div class="menu-item">
+                            <h4>Frape de Mokachino</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Frape de Mazap&aacute;n</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Frape de Arroz con Leche</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Soda Italiana Fresa Explosiva</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Soda Italiana Kiwi Explosivo</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Soda Italiana Mora Explosiva</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secci&oacute;n de Paquetes -->
+            <section id="paquetes" class="mb-5">
+                <h2>PAQUETES</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Caf&eacute; Americano + Croissant</h4>
+                            <p class="price">$40.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Expreso Doble + Croissant</h4>
+                            <p class="price">$40.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Capuchino + Croissant</h4>
+                            <p class="price">$50.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Chapata + Americano</h4>
+                            <p class="price">$110.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Rebanada de Pastel + Americano</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Dona + Americano</h4>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secci&oacute;n de Delicias (Ensaladas, Chapatas, Pastas, Alitas) -->
+            <section id="delicias" class="mb-5">
+                <h2>DELICIAS</h2>
+                <h3>ENSALADAS</h3>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Ensalada Tropical</h4>
+                            <p class="price">$85.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Ensalada Keto</h4>
+                            <p class="price">$85.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>CHAPATAS</h3>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Chapata Especial</h4>
+                            <p class="price">$100.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Chapata de Pechuga de Pavo</h4>
+                            <p class="price">$90.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Chapata de At&uacute;n</h4>
+                            <p class="price">$90.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>PASTAS</h3>
+                <div class="special-note">&iexcl;Disponibles solo de Viernes a Domingo!</div>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Pasta Bolo&ntilde;esa</h4>
+                            <p class="price">$150.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Pasta Alfredo</h4>
+                            <p class="price">$165.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Lasa&ntilde;a a la Bolo&ntilde;esa</h4>
+                            <p class="price">$120.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>ALITAS</h3>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Orden de Alitas</h4>
+                            <p class="price">$85.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secci&oacute;n de Postres -->
+            <section id="postres" class="mb-5">
+                <h2>POSTRES</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Rebanada de Pastel del D&iacute;a</h4>
+                            <p class="price">$55.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Crepas Dulces</h4>
+                            <p class="price">$75.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Crepa Salada</h4>
+                            <p class="price">$65.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Hot Cakes</h4>
+                            <p class="price">$80.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="menu-item">
+                            <h4>Fresas con Crema</h4>
+                            <p class="price">$80.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secci&oacute;n de Promociones 
+            <section id="promotions" class="promotions-section mb-5">
+                <h2>✨ Promociones Especiales ✨</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="promotion-item">
+                            <h4>2x1 en Caf&eacute; Americano</h4>
+                            <p class="promo-price">¡Solo $25.00!</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="promotion-item">
+                            <h4>D&uacute;o de Pastas</h4>
+                            <p class="promo-price">$180.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="promotion-item">
+                            <h4>Postre del D&iacute;a con Descuento</h4>
+                            <p class="promo-price">¡50% OFF!</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="promotion-item">
+                            <h4>Combo Desayuno</h4>
+                            <p class="promo-price">$95.00</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="promotion-item">
+                            <h4>Alitas para Compartir</h4>
+                            <p class="promo-price">$150.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+
+            <!-- Nueva Secci&oacute;n de Agradecimiento -->
+            <section id="thank-you-section" class="mb-5">
+                <h2>¡Gracias por Visitarnos!</h2>
+                <p>&ldquo;Donde cada taza cuenta una historia y cada visita deja una sonrisa.&rdquo;</p>
+                <!-- Se puede reemplazar esta imagen con una foto real de la cafeter&iacute;a o un detalle bonito -->
+                <img src="https://placehold.co/600x400/1A1A1A/DAA520?text=Gracias+por+tu+Visita" alt="Gracias por tu visita"/>
+            </section>
+
+            <!-- Secci&oacute;n de Contacto y Pagos -->
+            <section id="contacto" class="contact-info mb-5">
+                <h2>CONTACTO Y PAGOS</h2>
+                <p>Tel&eacute;fono: 52 56 6380 2600</p>
+                <h3>Transferencia</h3>
+                <p>Banco: Bancomer</p>
+                <p>N&uacute;mero de cuenta: 4152313749554866</p>
+                <p>Titular: Maritza Valencia Gonz&aacute;lez</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+        // JavaScript para el desplazamiento suave (smooth scroll) al hacer clic en los enlaces de navegaci&oacute;n
+        document.querySelectorAll('nav a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Funci&oacute;n para mostrar la fecha y hora actual
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const dateTimeString = now.toLocaleDateString('es-ES', options);
+            document.getElementById('datetime-display').textContent = dateTimeString;
+        }
+
+        // Actualizar la fecha y hora cada segundo
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        // L&oacute;gica para el bot&oacute;n de cerrar el banner flotante
+        document.getElementById('close-promo-banner').addEventListener('click', function() {
+            document.getElementById('floating-promo-banner').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
